@@ -74,16 +74,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $collection = Yii::$app->mongodb->getCollection('aa');
-        $collection->insert(['name' => 'John sSmith']);
-//
-//        $model=new Authorizaton();
-//        var_dump($model->find()->all());
-        $query = new Query();
-        $row = $query->from('aa')
-            ->all();
-       // var_dump($row); // outputs: "object(\MongoDB\BSON\ObjectID)"
-        var_dump((array) $row); // outputs "string 'acdfgdacdhcbdafa'"
+        return $this->render('index');
     }
 
     /**

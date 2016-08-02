@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-mongodb": "^2.1",
-        "letyii/yii2-rbac-mongodb": "dev-master"
+        "letyii/yii2-rbac-mongodb": "dev-master",
+        "yii2tech/embedded": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
