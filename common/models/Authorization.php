@@ -51,6 +51,7 @@ class Authorization extends \yii\mongodb\ActiveRecord implements IdentityInterfa
         return [
             ['email', 'required'],
             ['email', 'email'],
+            ['email', 'unique', 'targetClass' => self::className()],
             [['email', 'access_token', 'refresh_token', 'expire_at', 'create_at', 'update_at'], 'safe']
         ];
     }
