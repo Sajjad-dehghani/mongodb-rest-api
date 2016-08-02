@@ -127,7 +127,10 @@ class Authorization extends \yii\mongodb\ActiveRecord implements IdentityInterfa
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        return self::findOne(['access_token' => $token]);
+        return self::find()
+            ->where(['access_token' => $token])
+            ->andWhere(['<', 'expired_at', date('Y-m-d H:i:s', time() + Yii::$app->params['token.expireTime'])])
+            ->one();
     }
 
     /**
