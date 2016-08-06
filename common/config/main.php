@@ -14,7 +14,7 @@ return [
     'components' => [
         'authManager' => [
             'class' => 'yii\mongodb\rbac\MongoDbManager',
-            'defaultRoles' => ['admin', 'author'],
+            //'defaultRoles' => ['author'],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
