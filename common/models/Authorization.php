@@ -92,6 +92,22 @@ class Authorization extends \yii\mongodb\ActiveRecord implements IdentityInterfa
     }
 
     /**
+     * @param bool $insert
+     * @param array $changedAttributes
+     * @return bool
+     */
+    public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+        // the following three lines were added:
+        $auth = Yii::$app->authManager;
+        $authorRole = $auth->getRole('author');
+        $auth->assign($authorRole, $this->getId());
+
+        return true;
+    }
+
+    /**
      * @return array
      */
     public function fields()
@@ -129,7 +145,7 @@ class Authorization extends \yii\mongodb\ActiveRecord implements IdentityInterfa
     {
         return self::find()
             ->where(['access_token' => $token])
-            ->andWhere(['<', 'expired_at', date('Y-m-d H:i:s', time() + Yii::$app->params['token.expireTime'])])
+            // ->andWhere(['<', 'expired_at', date('Y-m-d H:i:s', time() + Yii::$app->params['token.expireTime'])])
             ->one();
     }
 
@@ -169,7 +185,7 @@ class Authorization extends \yii\mongodb\ActiveRecord implements IdentityInterfa
      */
     public function validateAuthKey($authKey)
     {
-        return self::findOne(['access_token' => $authKey]);
+        return self::findOne(['access_token' => $authKey]) == $authKey;
     }
 
     /**
