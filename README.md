@@ -1,2 +1,3 @@
 Rest API comment project with mongoDb and RBAC sample
-https://travis-ci.org/Sajjad-dehghani/mongodb-rest-api.svg?branch=master
+[![Build Status](https://travis-ci.org/Sajjad-dehghani/mongodb-rest-api.svg?branch=master)](https://travis-ci.org/Sajjad-dehghani/mongodb-rest-api)
+
