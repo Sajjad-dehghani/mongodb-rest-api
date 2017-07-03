@@ -7,3 +7,5 @@ Rest API comment project with mongoDb and RBAC sample
 [![License](https://poser.pugx.org/phpunit/phpunit/license)](https://packagist.org/packages/phpunit/phpunit)
 [![composer.lock available](https://poser.pugx.org/phpunit/phpunit/composerlock)](https://packagist.org/packages/phpunit/phpunit)
 [![Daily Downloads](https://poser.pugx.org/phpunit/phpunit/d/daily)](https://packagist.org/packages/phpunit/phpunit)
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/sajjad-dehghani/mongodb-rest-api?branch=master)](https://bettercodehub.com/)
